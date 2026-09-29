@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio V2
+
+Personal portfolio project for Lead and Senior Frontend Engineer opportunities. The site is in early development; the current page is a Next.js starter screen with a temporary theme toggle.
+
+## Tech Stack
+
+- Next.js 16.3.6 App Router and React 19.2.8
+- TypeScript 5 and Tailwind CSS 4, using the Tailwind PostCSS plugin
+- `next-themes` 0.4.6 for theme selection and persistence
+- ESLint 9 with the Next.js configuration
+- npm (`package-lock.json`)
+
+## Current Features
+
+- Light theme by default, with a keyboard-accessible toggle for light and dark themes. A saved choice persists across visits; the operating-system theme does not override the default.
+- Semantic color tokens in `app/globals.css` and a Tailwind `dark:` variant tied to `data-theme="dark"` on the root element.
+- Approved light and dark desktop design references and a portrait asset are present for later implementation. The portrait is not yet used on the page.
+
+## Project Structure
+
+```text
+app/                       Root layout, starter page, global styles
+components/Theme/
+  Provider/                next-themes client wrapper
+  Toggle/                  Temporary theme switch
+docs/                      Focused design and implementation rules
+public/images/profile/     Approved portrait asset
+design-reference/          Light and dark desktop SVG references
+context.md                 Implementation contract entry point
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20.9 or later (required by the installed Next.js version)
+- npm
+
+### Install
+
+```bash
+npm ci
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build and Run
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+### Lint
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+There is no dedicated type-check or test script. The production build checks TypeScript.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Architecture and Conventions
 
-## Deploy on Vercel
+Tailwind is the primary styling system. Theme colors use CSS variables, and `next-themes` supplies the root `data-theme` attribute. The root layout and page remain Server Components; the theme provider and toggle are Client Components. Theme components use named folders with `index.tsx` entry points. The detailed conventions and planned section structure live in the documentation below.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Documentation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[context.md](context.md) is the contract entry point. These focused documents cover the implementation rules:
+
+- [Design and responsive behavior](docs/design.md)
+- [Architecture](docs/architecture.md)
+- [Coding standards](docs/coding-standards.md)
+- [Accessibility](docs/accessibility.md)
+- [Motion](docs/motion.md)
+- [Content and publication checks](docs/content.md)
+- [Definition of done](docs/definition-of-done.md)
+
+## Status
+
+The project scaffold and theme foundation are in place. The portfolio sections and verified public content described in the contract have not been implemented yet.

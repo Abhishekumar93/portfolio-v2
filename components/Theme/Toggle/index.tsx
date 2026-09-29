@@ -5,10 +5,14 @@ import { useSyncExternalStore } from "react";
 
 const subscribe = () => () => {};
 
-export default function ThemeToggle() {
+const ThemeToggle = () => {
   const { theme, setTheme } = useTheme();
   // Keep the server and initial hydration render independent of the saved theme.
-  const mounted = useSyncExternalStore(subscribe, () => true, () => false);
+  const mounted = useSyncExternalStore(
+    subscribe,
+    () => true,
+    () => false,
+  );
   const nextTheme = theme === "dark" ? "light" : "dark";
 
   return (
@@ -21,4 +25,6 @@ export default function ThemeToggle() {
       {mounted ? `Switch to ${nextTheme} theme` : "Theme toggle"}
     </button>
   );
-}
+};
+
+export default ThemeToggle;
