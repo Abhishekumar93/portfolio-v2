@@ -1,22 +1,43 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9f9f9;
+  --foreground: #111111;
+  --surface: #ffffff;
+  --text-secondary: #4b5563;
+  --accent: #1a4d2e;
+  --on-accent: #ffffff;
+  --border: #dbdfdd;
+  --surface-soft: #f3f4f6;
+  --portrait-panel: #eef0ed;
+}
+
+:root[data-theme="dark"] {
+  --background: #0d1416;
+  --foreground: #f3f6f4;
+  --surface: #152022;
+  --text-secondary: #aabbb6;
+  --accent: #78dda8;
+  --on-accent: #0d1416;
+  --border: #354843;
+  --surface-soft: #1b282a;
+  --portrait-panel: #4a5a50;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-border: var(--border);
+  --color-surface-soft: var(--surface-soft);
+  --color-portrait-panel: var(--portrait-panel);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
