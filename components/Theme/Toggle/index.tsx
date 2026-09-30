@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
+import Button from "@/components/UI/Button";
 
 const subscribe = () => () => {};
 
@@ -16,14 +17,12 @@ const ThemeToggle = () => {
   const nextTheme = theme === "dark" ? "light" : "dark";
 
   return (
-    <button
+    <Button
+      title={mounted ? `Switch to ${nextTheme} theme` : "Theme toggle"}
       type="button"
       disabled={!mounted}
       onClick={() => setTheme(nextTheme)}
-      className="min-h-11 rounded-lg border border-border bg-white px-4 py-2 text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent disabled:opacity-50 dark:bg-neutral-950 dark:text-neutral-50"
-    >
-      {mounted ? `Switch to ${nextTheme} theme` : "Theme toggle"}
-    </button>
+    />
   );
 };
 
