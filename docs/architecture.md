@@ -89,6 +89,14 @@ components/
     SectionHeading/
       index.tsx
 
+  Icons/
+    MoonIcon/
+      index.tsx
+    SunIcon/
+      index.tsx
+    MenuIcon/
+      index.tsx
+
 types/
   portfolio.ts
   navigation.ts
@@ -125,6 +133,14 @@ components/
       index.tsx
     SectionHeading/
       index.tsx
+
+  Icons/
+    MoonIcon/
+      index.tsx
+    SunIcon/
+      index.tsx
+    MenuIcon/
+      index.tsx
 ```
 
 ### Placement rules
@@ -150,6 +166,59 @@ The shared `Button` component should exist to centralize behavior or styling tha
 - loading state, if later required
 
 Do not add complexity or variants before they are actually needed.
+
+### Folder vs single-file components
+
+Use a folder with `index.tsx` when a component has meaningful colocated files or is complex enough to benefit from a dedicated component directory.
+
+Use a single `.tsx` file for small, self-contained components where a dedicated folder would add no value.
+
+SVG icon components are the default example of the single-file approach and should live directly under `components/Icons/`.
+
+## SVG icon components
+
+When an SVG icon is required in the application, implement it as a reusable React component instead of writing raw SVG markup directly inside feature, layout, or page components.
+
+Store simple SVG icon components as flat files under:
+
+```text
+components/
+  Icons/
+    IconName.tsx
+```
+
+Name each icon component/file according to the semantic meaning of the icon it represents.
+
+### Rules
+
+- Create SVG icons as React components under `components/Icons/`.
+- Use a flat `IconName.tsx` file for simple, self-contained icons.
+- Do not create a dedicated folder for an icon unless it genuinely needs additional colocated files.
+- Import and use the icon component wherever the icon is needed instead of duplicating raw `<svg>` markup.
+- Keep icon components small, focused, and presentation-only.
+- Follow KISS; do not introduce icon registries, factories, providers, configuration systems, or other abstractions unless a real implementation need later justifies them.
+- Preserve the SVG's required `viewBox`, paths, circles, strokes, fills, dimensions, and other rendering attributes.
+- Prefer presentation props only when genuinely needed.
+- Keep simple icon-specific props local to `index.tsx`.
+- Extract a separate type file only when type complexity or reuse genuinely justifies it.
+- Do not install an icon library solely to avoid implementing a small number of project-specific SVG icons.
+- This rule applies to reusable SVG UI icons. It does not automatically apply to illustrations, large artwork, design-reference SVGs, or other content assets.
+
+### Component convention
+
+Follow the project's standard React component convention:
+
+```tsx
+const IconName = () => {
+  return <svg>{/* SVG content */}</svg>;
+};
+
+export default IconName;
+```
+
+Use a named arrow-function component and export it separately.
+
+Do not define SVG icons inline inside unrelated components when the SVG represents a reusable application icon.
 
 ## Component boundaries
 
