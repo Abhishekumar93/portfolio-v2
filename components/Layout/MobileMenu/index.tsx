@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import MobileMenuIcon from "@/components/Icons/MobileMenuIcon";
+import Button from "@/components/UI/Button";
 
 interface NavigationItem {
   label: string;
@@ -58,17 +59,15 @@ const MobileMenu = () => {
 
   return (
     <>
-      <button
-        ref={triggerRef}
-        type="button"
-        aria-label={isOpen ? "Close navigation" : "Open navigation"}
-        aria-expanded={isOpen}
-        aria-controls={menuId}
+      <Button
+        btnRef={triggerRef}
+        ariaLabel={isOpen ? "Close navigation" : "Open navigation"}
+        ariaExpanded={isOpen}
+        ariaControls={menuId}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex size-11 shrink-0 items-center justify-center rounded-lg text-foreground hover:bg-surface-soft focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-      >
-        <MobileMenuIcon isOpen={isOpen} />
-      </button>
+        className="flex size-11 shrink-0 items-center justify-center rounded-lg text-foreground hover:bg-surface-soft"
+        extraContent={<MobileMenuIcon isOpen={isOpen} />}
+      />
       <nav
         ref={menuRef}
         id={menuId}
