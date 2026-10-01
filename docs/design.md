@@ -1,5 +1,52 @@
 # Design and Responsive Contract
 
+## Preserve manually tuned visual values
+
+Existing visual values that have been manually tuned are considered intentional and must be preserved during unrelated tasks.
+
+This includes, but is not limited to:
+
+- font size
+- line height
+- letter spacing
+- width, min-width, and max-width
+- height, min-height, and max-height
+- margin
+- padding
+- gap
+- positioning and offsets
+- grid spans and layout proportions
+- breakpoint-specific classes
+- image sizing, cropping, and positioning
+- border radius and other manually tuned visual geometry
+
+Do not modify an existing tuned value merely to better match a reference, to make a newly added element fit more conveniently, or because another implementation appears preferable.
+
+A protected visual value may be changed only when:
+
+1. the current task explicitly requests that visual property to change, or
+2. an actual regression is identified and the change is necessary to fix it.
+
+If completing a task appears to require modifying a protected visual value, preserve the current value and report the conflict instead of silently changing it.
+
+### Responsive stability
+
+Mobile and tablet visual tuning that has already been manually finalized is considered stable.
+
+When implementing or refining desktop behavior:
+
+- prefer desktop-scoped responsive classes instead of changing established base/mobile/tablet values
+- do not adjust smaller-screen typography, spacing, dimensions, or layout merely to solve a desktop issue
+- verify that desktop changes do not regress the established mobile and tablet layouts
+
+Desktop values may continue to evolve as development progresses unless a desktop value has also been explicitly finalized.
+
+### Task scope rule
+
+Visual-reference matching does not grant permission to rewrite existing tuned values outside the explicit scope of the current task.
+
+For example, a task that adds a portrait may add the portrait container and its required layout styles, but it must not silently change an already tuned heading font size, text width, mobile padding, or tablet spacing unless the task specifically requests those changes.
+
 ## Sources of truth
 
 Place the approved references in `design-reference/`:
@@ -14,13 +61,13 @@ These are **desktop visual references at 1440px**, not fixed-coordinate layouts 
 
 Use a fluid container with `max-width: 1152px` and center it. Never reproduce the SVG's absolute x/y coordinates. A section can use an internal grid while its outer edges remain aligned to the same container.
 
-| Viewport | Horizontal gutter | Layout behavior |
-|---|---:|---|
-| 320–639px | 24px | One column. Compact header with name, theme toggle, and accessible menu. Hero copy before portrait. Metrics stack. All cards stack. Buttons and pills wrap naturally. |
-| 640–767px | 24px | Still a single main column; metrics may use three equal columns if captions wrap cleanly. Keep case studies stacked. |
-| 768–1023px | 32px | Two personal-project cards and two practice cards where content fits. Hero, case-study interiors, expertise, and contact remain stacked. |
-| 1024–1279px | 48px | Desktop navigation. Hero 7/5; featured study approximately 35/65; Sony study, expertise, and contact use desktop grids. |
-| 1280px and wider | Centered 1152px container | Keep content width fixed; outer margins grow. Reference composition at 1440px. Do not stretch cards across 1920px screens. |
+| Viewport         |         Horizontal gutter | Layout behavior                                                                                                                                                       |
+| ---------------- | ------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 320–639px        |                      24px | One column. Compact header with name, theme toggle, and accessible menu. Hero copy before portrait. Metrics stack. All cards stack. Buttons and pills wrap naturally. |
+| 640–767px        |                      24px | Still a single main column; metrics may use three equal columns if captions wrap cleanly. Keep case studies stacked.                                                  |
+| 768–1023px       |                      32px | Two personal-project cards and two practice cards where content fits. Hero, case-study interiors, expertise, and contact remain stacked.                              |
+| 1024–1279px      |                      48px | Desktop navigation. Hero 7/5; featured study approximately 35/65; Sony study, expertise, and contact use desktop grids.                                               |
+| 1280px and wider | Centered 1152px container | Keep content width fixed; outer margins grow. Reference composition at 1440px. Do not stretch cards across 1920px screens.                                            |
 
 Only add a breakpoint when content actually needs it. The table describes target behavior, not a requirement to create a media query at every listed width. Check at **320, 360, 390, 480, 640, 768, 1024, 1280, 1440, and 1920px**. No horizontal scroll, clipped text, overlapping cards, or inaccessible controls.
 
@@ -46,24 +93,24 @@ Review an actual 1920 × 1080 screenshot in **both themes**: the first screen sh
 
 Use semantic tokens rather than writing hex values throughout components. The dark theme changes colors, **not** layout or content.
 
-| Role | Light | Dark | Use |
-|---|---|---|---|
-| Page background | `#F9F9F9` | `#0D1416` | Main canvas |
-| Card surface | `#FFFFFF` | `#152022` | Case studies, expertise, contact |
-| Primary text | `#111111` | `#F3F6F4` | Headings, strong copy |
-| Secondary text | `#4B5563` | `#AABBB6` | Body, supporting labels |
-| Accent | `#1A4D2E` | `#78DDA8` | Eyebrows, links, metrics, selected controls |
-| On solid accent | `#FFFFFF` | `#0D1416` | Button/toggle text and icon |
-| Case-study tinted panel | `#EAF2EB` | `#263E34` | 90% and Sony LIV metric panels |
-| Soft section/card surface | `#F3F4F6` | `#1B282A` | Practice band and subtle tiles |
-| Standard border | `#DBDFDD` | `#354843` | 1px card and control borders |
-| Portrait panel | `#EEF0ED` | `#4A5A50` | Behind transparent portrait |
-| Built in Public band | `#FFFFFF` | `#111B1D` | Full-width section background |
-| Built in Public card | `#F9F9F9` | `#223235` | Project cards |
-| Project-card border | `#DBDFDD` | `#4B625C` | Project card outline |
-| NDA badge background | `#FFF7F7` | `#22302E` | Small informational badge |
-| NDA badge text/border | `#A83A3A` | `#AFC2BB` | Subtle in dark mode, never an error alert |
-| Major divider | `#C9D0CC` | `#3D524A` | Proof-bar top/bottom rules |
+| Role                      | Light     | Dark      | Use                                         |
+| ------------------------- | --------- | --------- | ------------------------------------------- |
+| Page background           | `#F9F9F9` | `#0D1416` | Main canvas                                 |
+| Card surface              | `#FFFFFF` | `#152022` | Case studies, expertise, contact            |
+| Primary text              | `#111111` | `#F3F6F4` | Headings, strong copy                       |
+| Secondary text            | `#4B5563` | `#AABBB6` | Body, supporting labels                     |
+| Accent                    | `#1A4D2E` | `#78DDA8` | Eyebrows, links, metrics, selected controls |
+| On solid accent           | `#FFFFFF` | `#0D1416` | Button/toggle text and icon                 |
+| Case-study tinted panel   | `#EAF2EB` | `#263E34` | 90% and Sony LIV metric panels              |
+| Soft section/card surface | `#F3F4F6` | `#1B282A` | Practice band and subtle tiles              |
+| Standard border           | `#DBDFDD` | `#354843` | 1px card and control borders                |
+| Portrait panel            | `#EEF0ED` | `#4A5A50` | Behind transparent portrait                 |
+| Built in Public band      | `#FFFFFF` | `#111B1D` | Full-width section background               |
+| Built in Public card      | `#F9F9F9` | `#223235` | Project cards                               |
+| Project-card border       | `#DBDFDD` | `#4B625C` | Project card outline                        |
+| NDA badge background      | `#FFF7F7` | `#22302E` | Small informational badge                   |
+| NDA badge text/border     | `#A83A3A` | `#AFC2BB` | Subtle in dark mode, never an error alert   |
+| Major divider             | `#C9D0CC` | `#3D524A` | Proof-bar top/bottom rules                  |
 
 The accent is sparse: eyebrows, primary buttons, links, numerical highlights, checkmarks, and small rules. No gradients, neon glow, skill progress bars, animated blobs, or large blocks of accent-colored body copy. Cards use borders; only the portrait may have a restrained shadow.
 
@@ -71,20 +118,20 @@ The accent is sparse: eyebrows, primary buttons, links, numerical highlights, ch
 
 Use **Inter** as a variable font, loaded through `next/font` if available. Define a sensible sans-serif fallback. Use real weights 400, 500, 600, and 700; the SVG's fractional weights are visual approximations. All text remains selectable and semantic HTML, never text embedded in images.
 
-| Role | Mobile | Tablet | Desktop | Line height / treatment |
-|---|---:|---:|---:|---|
-| Hero H1 | 38px at 320px, fluid to 44px | 48–52px | 64px max | 1.08–1.12, bold, tight tracking |
-| Section H2 | 32px | 38px | 44px | 1.12–1.18, bold |
-| Card H3 | 23–24px | 26–28px | 30–35px as composition needs | 1.2–1.25, bold |
-| Intro paragraph | 17px | 18px | 18px | 1.55–1.6 |
-| Body and case-study detail | 16px | 16px | 16–17px | 1.6 |
-| Outcome statements | 17px | 18px | 18px | 1.45, semibold |
-| Proof-bar numbers | 36px | 40px | 44px | 1.0–1.1, bold |
-| Featured 90% | 72px | 88px | 104px | 1.0, bold |
-| Sony metric numbers | 44px | 52px | 59px | 1.0, bold |
-| Eyebrows and small labels | 12px | 13px | 13px | Uppercase, bold, modest tracking |
-| Captions | 14px | 14–15px | 15px | At least 1.4 |
-| Navigation and buttons | 15–16px | 15–16px | 14px nav / 16px actions | Clear tap targets |
+| Role                       |                       Mobile |  Tablet |                      Desktop | Line height / treatment          |
+| -------------------------- | ---------------------------: | ------: | ---------------------------: | -------------------------------- |
+| Hero H1                    | 38px at 320px, fluid to 44px | 48–52px |                     64px max | 1.08–1.12, bold, tight tracking  |
+| Section H2                 |                         32px |    38px |                         44px | 1.12–1.18, bold                  |
+| Card H3                    |                      23–24px | 26–28px | 30–35px as composition needs | 1.2–1.25, bold                   |
+| Intro paragraph            |                         17px |    18px |                         18px | 1.55–1.6                         |
+| Body and case-study detail |                         16px |    16px |                      16–17px | 1.6                              |
+| Outcome statements         |                         17px |    18px |                         18px | 1.45, semibold                   |
+| Proof-bar numbers          |                         36px |    40px |                         44px | 1.0–1.1, bold                    |
+| Featured 90%               |                         72px |    88px |                        104px | 1.0, bold                        |
+| Sony metric numbers        |                         44px |    52px |                         59px | 1.0, bold                        |
+| Eyebrows and small labels  |                         12px |    13px |                         13px | Uppercase, bold, modest tracking |
+| Captions                   |                         14px | 14–15px |                         15px | At least 1.4                     |
+| Navigation and buttons     |                      15–16px | 15–16px |      14px nav / 16px actions | Clear tap targets                |
 
 Do not solve clipping by reducing all text. Let titles wrap, let cards grow, and keep a readable measure for long paragraphs (roughly 65–75 characters per line). Use natural height rather than fixed-height content boxes.
 

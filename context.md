@@ -11,6 +11,16 @@ Build a restrained technical whitepaper: readable typography, generous space, th
 
 Testing strategy lives in `docs/testing.md`. Read it for tasks that add or change interactive behavior, state, accessibility behavior, or regression-prone logic. Do not require dedicated tests for every component by default.
 
+## Protected visual tuning
+
+Existing manually tuned visual values are intentional and protected. Do not modify established typography, spacing, dimensions, positioning, grid behavior, image treatment, or responsive classes as part of an unrelated task.
+
+A protected visual value may change only when the current task explicitly requests that visual property to change or when an actual regression requires it. If a task appears to require changing a protected value, preserve it and report the conflict instead of silently changing it.
+
+Mobile and tablet visual tuning that has already been manually finalized should be treated as stable. Desktop values may continue to evolve during implementation unless they have also been explicitly finalized.
+
+See `docs/design.md` for the source-of-truth rule.
+
 ## Sources of truth
 
 Place the approved references in `design-reference/`:
