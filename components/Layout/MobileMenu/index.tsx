@@ -76,7 +76,7 @@ const MobileMenu = () => {
         inert={!isOpen}
         className={`absolute inset-x-0 top-full border-b border-border bg-surface px-6 py-3 transition-[opacity,translate,visibility] duration-150 ease-out motion-reduce:translate-y-0 motion-reduce:transition-none md:px-8 lg:px-12 xl:px-0 ${isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"}`}
       >
-        <ul className="mx-auto max-w-6xl space-y-1">
+        <ul className="mx-auto space-y-1">
           {navigationItems.map(({ label, href }) => (
             <li key={label}>
               <a
