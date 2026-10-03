@@ -11,7 +11,7 @@ interface ActionLinkProps {
 }
 
 const defaultClassName =
-  "inline-flex min-h-11 items-center font-semibold underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent";
+  "inline-flex items-center font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent rounded-full px-4";
 
 const ActionLink = ({
   href,
@@ -25,7 +25,7 @@ const ActionLink = ({
   return (
     <a
       href={href}
-      className={className ?? defaultClassName}
+      className={`${className} ${defaultClassName}`}
       download={download}
       target={target}
       rel={rel}
