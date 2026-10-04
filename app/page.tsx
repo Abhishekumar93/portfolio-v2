@@ -1,6 +1,7 @@
 import Hero from "@/components/Sections/Hero";
 import Metrics from "@/components/Sections/Metrics";
 import ProfessionalCaseStudies from "@/components/Sections/ProfessionalCaseStudies";
+import PersonalProjects from "@/components/Sections/PersonalProjects";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Hero />
       <Metrics />
       <ProfessionalCaseStudies />
+      <PersonalProjects />
     </main>
   );
 };
