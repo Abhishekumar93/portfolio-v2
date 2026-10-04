@@ -1,4 +1,5 @@
 import SchemaDrivenCaseStudy from "./SchemaDrivenCaseStudy";
+import ProductDeliveryCaseStudy from "./ProductDeliveryCaseStudy";
 
 const ProfessionalCaseStudies = () => {
   return (
@@ -21,6 +22,9 @@ const ProfessionalCaseStudies = () => {
       </p>
       <div className="mt-6">
         <SchemaDrivenCaseStudy />
+      </div>
+      <div className="mt-10">
+        <ProductDeliveryCaseStudy />
       </div>
     </section>
   );
