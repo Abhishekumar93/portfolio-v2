@@ -22,7 +22,6 @@ const ProfessionalCaseStudies = () => {
       <div className="mt-6">
         <SchemaDrivenCaseStudy />
       </div>
-      x
     </section>
   );
 };

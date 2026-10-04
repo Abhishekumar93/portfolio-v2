@@ -10,7 +10,7 @@ const Hero = () => {
     >
       <div className="mx-auto grid grid-cols-12 gap-y-4 md:grid-rows-[auto_1fr] md:gap-y-8 lg:gap-x-8">
         <div className="col-span-12 md:col-span-7">
-          <p className="whitespace-nowrap text-[clamp(0.575rem,2.9vw,1.5rem)] md:text-[clamp(0.75rem,1.5vw,2rem)] font-bold uppercase tracking-wider text-accent">
+          <p className="whitespace-nowrap text-[clamp(0.575rem,2.9vw,1.5rem)] md:text-[clamp(0.75rem,1.5vw,2rem)] xl:text-[clamp(1rem,1.25vw,1.25rem)] font-bold uppercase tracking-wider text-accent">
             Lead Frontend Engineer · React · Next.js · TypeScript
           </p>
           <h1

@@ -17,7 +17,7 @@ const HeroActions = ({
             <ActionLink
               href={workHref}
               label="View My Work"
-              className="bg-accent font-bold text-black min-h-11"
+              className="bg-accent font-bold dark:text-black text-white min-h-11"
             />
           )}
           {resumeHref && (
@@ -30,7 +30,7 @@ const HeroActions = ({
           )}
         </div>
       )}
-      <div className="flex flex-wrap items-center gap-4 text-text-secondary text-xs mt-0 md:mt-2 lg:mt-4">
+      <div className="flex flex-wrap items-center gap-4 text-text-secondary text-xs xl:text-sm mt-0 md:mt-2 lg:mt-4">
         <div className="border border-accent rounded-full px-4 py-3 items-center flex text-text-secondary w-fit">
           India . Open to opportunities
         </div>

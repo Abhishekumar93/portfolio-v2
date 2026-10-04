@@ -13,6 +13,9 @@
   --divider: #c9d0cc;
   --surface-soft: #f3f4f6;
   --portrait-panel: #eef0ed;
+  --case-study-panel: #eaf2eb;
+  --nda-bg: #fff7f7;
+  --nda-text: #a83a3a;
 }
 
 :root[data-theme="dark"] {
@@ -26,6 +29,9 @@
   --divider: #3d524a;
   --surface-soft: #1b282a;
   --portrait-panel: #4a5a50;
+  --case-study-panel: #263e34;
+  --nda-bg: var(--surface);
+  --nda-text: var(--text-secondary);
 }
 
 @theme inline {
@@ -39,6 +45,9 @@
   --color-divider: var(--divider);
   --color-surface-soft: var(--surface-soft);
   --color-portrait-panel: var(--portrait-panel);
+  --color-case-study-panel: var(--case-study-panel);
+  --color-nda-bg: var(--nda-bg);
+  --color-nda-text: var(--nda-text);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
