@@ -1,8 +1,8 @@
-import type { MouseEventHandler, ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from 'react';
 
 interface ButtonProps {
   title?: string;
-  type?: "button" | "submit" | "reset";
+  type?: 'button' | 'submit' | 'reset';
   onClick: MouseEventHandler<HTMLButtonElement>;
   disabled?: boolean;
   testId?: string;
@@ -15,11 +15,11 @@ interface ButtonProps {
 }
 
 const defaultClassName =
-  "min-h-11 rounded-lg border border-border bg-white px-4 py-2 text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent disabled:opacity-50 dark:bg-neutral-950 dark:text-neutral-50";
+  'min-h-11 rounded-lg border border-border bg-white px-4 py-2 text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent disabled:opacity-50 dark:bg-neutral-950 dark:text-neutral-50';
 
 const Button = ({
   title,
-  type = "button",
+  type = 'button',
   onClick,
   disabled = false,
   testId,

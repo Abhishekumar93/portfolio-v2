@@ -1,5 +1,5 @@
-import MobileMenu from "@/components/Layout/MobileMenu";
-import ThemeToggle from "@/components/Theme/Toggle";
+import MobileMenu from '@/components/Layout/MobileMenu';
+import ThemeToggle from '@/components/Theme/Toggle';
 
 const Header = () => {
   return (

@@ -1,6 +1,6 @@
-import Image from "next/image";
-import heroPortrait from "@/public/images/profile/abhishek-hero.png";
-import HeroActions from "./HeroActions";
+import Image from 'next/image';
+import heroPortrait from '@/public/images/profile/abhishek-hero.png';
+import HeroActions from './HeroActions';
 
 const Hero = () => {
   return (

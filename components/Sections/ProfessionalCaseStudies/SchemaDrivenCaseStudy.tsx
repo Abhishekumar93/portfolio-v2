@@ -1,4 +1,4 @@
-import ProfessionalCaseStudyCard from "./ProfessionalCaseStudyCard";
+import ProfessionalCaseStudyCard from './ProfessionalCaseStudyCard';
 
 const SchemaDrivenCaseStudy = () => {
   return (
@@ -21,7 +21,7 @@ const SchemaDrivenCaseStudy = () => {
             aria-label="Technologies"
             className="mt-4 md:mt-6 lg:mt-8 flex flex-wrap gap-2"
           >
-            {["React", "TypeScript", "Reusable UI"].map((technology) => (
+            {['React', 'TypeScript', 'Reusable UI'].map((technology) => (
               <li
                 key={technology}
                 className="rounded-full border border-border bg-surface px-4 py-2 text-[clamp(0.625rem,3.5vw,0.75rem)] font-semibold leading-normal text-accent"

@@ -15,7 +15,7 @@ const MobileMenuIcon = ({ isOpen }: MobileMenuIconProps) => {
       strokeWidth="1.75"
       strokeLinecap="round"
     >
-      <path d={isOpen ? "m6 6 12 12M6 18 18 6" : "M4 6h16M4 12h16M4 18h16"} />
+      <path d={isOpen ? 'm6 6 12 12M6 18 18 6' : 'M4 6h16M4 12h16M4 18h16'} />
     </svg>
   );
 };

@@ -1,4 +1,4 @@
-import ActionLink from "@/components/UI/ActionLink";
+import ActionLink from '@/components/UI/ActionLink';
 
 interface HeroActionsProps {
   workHref?: string;
@@ -6,8 +6,8 @@ interface HeroActionsProps {
 }
 
 const HeroActions = ({
-  workHref = "work",
-  resumeHref = "resume",
+  workHref = 'work',
+  resumeHref = 'resume',
 }: HeroActionsProps) => {
   return (
     <div className="col-span-12 grid gap-4 md:col-span-7 md:col-start-1 md:row-start-2 md:self-start mt-2 md:mt-0">

@@ -1,26 +1,26 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import ThemeProvider from "@/components/Theme/Provider";
-import Header from "@/components/Layout/Header";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import ThemeProvider from '@/components/Theme/Provider';
+import Header from '@/components/Layout/Header';
+import './globals.css';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Abhishek Kumar - Lead Frontend Engineer",
+  title: 'Abhishek Kumar - Lead Frontend Engineer',
   description:
-    "Portfolio website for Abhishek Kumar, a Lead Frontend Engineer.",
+    'Portfolio website for Abhishek Kumar, a Lead Frontend Engineer.',
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html
       lang="en"

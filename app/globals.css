@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
@@ -18,7 +18,7 @@
   --nda-text: #a83a3a;
 }
 
-:root[data-theme="dark"] {
+:root[data-theme='dark'] {
   --background: #0d1416;
   --foreground: #f3f6f4;
   --surface: #152022;

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
-import { useSyncExternalStore } from "react";
-import ThemeToggleIcon from "@/components/Icons/ThemeToggleIcon";
-import Button from "@/components/UI/Button";
+import { useTheme } from 'next-themes';
+import { useSyncExternalStore } from 'react';
+import ThemeToggleIcon from '@/components/Icons/ThemeToggleIcon';
+import Button from '@/components/UI/Button';
 
 const subscribe = () => () => {};
 
@@ -15,18 +15,18 @@ const ThemeToggle = () => {
     () => true,
     () => false,
   );
-  const nextTheme = theme === "dark" ? "light" : "dark";
+  const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
   return (
     <Button
-      ariaLabel={mounted ? `Switch to ${nextTheme} theme` : "Theme toggle"}
+      ariaLabel={mounted ? `Switch to ${nextTheme} theme` : 'Theme toggle'}
       type="button"
       disabled={!mounted}
       onClick={() => setTheme(nextTheme)}
       className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-accent hover:bg-surface-soft"
       extraContent={
         <ThemeToggleIcon
-          theme={mounted && theme === "dark" ? "dark" : "light"}
+          theme={mounted && theme === 'dark' ? 'dark' : 'light'}
         />
       }
     />

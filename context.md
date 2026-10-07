@@ -241,7 +241,7 @@ export interface ThemeToggleProps {
 
 ```tsx
 // components/Theme/Toggle/index.tsx
-import type { ThemeToggleProps } from "./types";
+import type { ThemeToggleProps } from './types';
 
 const ThemeToggle = (props: ThemeToggleProps) => {
   // ...

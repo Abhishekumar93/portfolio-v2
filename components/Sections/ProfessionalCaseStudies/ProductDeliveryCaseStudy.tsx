@@ -1,15 +1,15 @@
-import ProfessionalCaseStudyCard from "./ProfessionalCaseStudyCard";
+import ProfessionalCaseStudyCard from './ProfessionalCaseStudyCard';
 
 const sonyLivMetrics = [
-  { value: "45%", label: "lower initial load" },
-  { value: "3", label: "engineers mentored" },
+  { value: '45%', label: 'lower initial load' },
+  { value: '3', label: 'engineers mentored' },
 ];
 
 const detailHeadingClassName =
-  "text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent";
+  'text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent';
 
 const detailListClassName =
-  "mt-4 list-disc space-y-3 pl-6 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] font-medium leading-relaxed text-foreground marker:text-accent";
+  'mt-4 list-disc space-y-3 pl-6 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] font-medium leading-relaxed text-foreground marker:text-accent';
 
 const ProductDeliveryCaseStudy = () => {
   return (

@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useId, useRef, useState } from "react";
-import MobileMenuIcon from "@/components/Icons/MobileMenuIcon";
-import Button from "@/components/UI/Button";
+import { useEffect, useId, useRef, useState } from 'react';
+import MobileMenuIcon from '@/components/Icons/MobileMenuIcon';
+import Button from '@/components/UI/Button';
 
 interface NavigationItem {
   label: string;
@@ -11,11 +11,11 @@ interface NavigationItem {
 
 // The matching section IDs will be added in the later section implementations.
 const navigationItems: NavigationItem[] = [
-  { label: "Experience", href: "/#experience" },
-  { label: "Work", href: "/#work" },
-  { label: "Expertise", href: "/#expertise" },
-  { label: "Practice", href: "/#practice" },
-  { label: "Contact", href: "/#contact" },
+  { label: 'Experience', href: '/#experience' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Expertise', href: '/#expertise' },
+  { label: 'Practice', href: '/#practice' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 const MobileMenu = () => {
@@ -30,22 +30,22 @@ const MobileMenu = () => {
     // Wait for the opening visibility transition before moving keyboard focus.
     let focusFrame = requestAnimationFrame(() => {
       focusFrame = requestAnimationFrame(() => {
-        menuRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
+        menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus();
       });
     });
 
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key !== "Escape") return;
+      if (event.key !== 'Escape') return;
 
       event.preventDefault();
       setIsOpen(false);
       triggerRef.current?.focus();
     };
 
-    document.addEventListener("keydown", handleEscape);
+    document.addEventListener('keydown', handleEscape);
     return () => {
       cancelAnimationFrame(focusFrame);
-      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener('keydown', handleEscape);
     };
   }, [isOpen]);
 
@@ -55,13 +55,13 @@ const MobileMenu = () => {
   };
 
   const itemClassName =
-    "flex min-h-11 items-center rounded-lg px-3 py-2 text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+    'flex min-h-11 items-center rounded-lg px-3 py-2 text-base focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent';
 
   return (
     <>
       <Button
         btnRef={triggerRef}
-        ariaLabel={isOpen ? "Close navigation" : "Open navigation"}
+        ariaLabel={isOpen ? 'Close navigation' : 'Open navigation'}
         ariaExpanded={isOpen}
         ariaControls={menuId}
         onClick={() => setIsOpen(!isOpen)}
@@ -74,7 +74,7 @@ const MobileMenu = () => {
         aria-label="Main navigation"
         aria-hidden={!isOpen}
         inert={!isOpen}
-        className={`absolute inset-x-0 top-full border-b border-border bg-surface px-6 py-3 transition-[opacity,translate,visibility] duration-150 ease-out motion-reduce:translate-y-0 motion-reduce:transition-none md:px-8 lg:px-12 xl:px-0 ${isOpen ? "visible translate-y-0 opacity-100" : "invisible -translate-y-1 opacity-0"}`}
+        className={`absolute inset-x-0 top-full border-b border-border bg-surface px-6 py-3 transition-[opacity,translate,visibility] duration-150 ease-out motion-reduce:translate-y-0 motion-reduce:transition-none md:px-8 lg:px-12 xl:px-0 ${isOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
       >
         <ul className="mx-auto space-y-1">
           {navigationItems.map(({ label, href }) => (

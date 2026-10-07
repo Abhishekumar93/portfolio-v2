@@ -1,4 +1,4 @@
-import ActionLink from "@/components/UI/ActionLink";
+import ActionLink from '@/components/UI/ActionLink';
 
 interface ProjectCardProps {
   category: string;
@@ -10,7 +10,7 @@ interface ProjectCardProps {
 }
 
 const actionClassName =
-  "min-h-11 py-2 text-sm text-accent underline-offset-4 hover:underline lg:text-base";
+  'min-h-11 py-2 text-sm text-accent underline-offset-4 hover:underline lg:text-base';
 
 const ProjectCard = ({
   category,
