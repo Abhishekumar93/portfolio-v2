@@ -48,7 +48,7 @@ const SchemaDrivenCaseStudy = () => {
               <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
                 The Problem
               </h4>
-              <p className="mt-2 lg:mt-4 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] leading-relaxed text-text-secondary">
+              <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
                 Repeated form work slowed delivery across product workflows.
               </p>
             </div>
@@ -56,7 +56,7 @@ const SchemaDrivenCaseStudy = () => {
               <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
                 My Contribution
               </h4>
-              <p className="mt-2 lg:mt-4 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] leading-relaxed text-text-secondary">
+              <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
                 Architected a reusable schema-driven system in React and
                 TypeScript.
               </p>
@@ -65,7 +65,7 @@ const SchemaDrivenCaseStudy = () => {
               <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
                 Trade-offs
               </h4>
-              <p className="mt-2 lg:mt-4 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] leading-relaxed text-text-secondary">
+              <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
                 Reusable patterns must still support differing workflow needs.
               </p>
             </div>
@@ -74,7 +74,7 @@ const SchemaDrivenCaseStudy = () => {
             <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
               Outcome
             </h4>
-            <ul className="mt-4 list-disc space-y-3 pl-6 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] font-semibold leading-normal text-foreground marker:text-accent md:text-lg">
+            <ul className="mt-4 list-disc space-y-3 pl-6 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-normal text-foreground marker:text-accent md:text-lg">
               <li>90% less feature-development time</li>
               <li>Faster delivery of new form features</li>
               <li>Reusable architecture across form workflows</li>

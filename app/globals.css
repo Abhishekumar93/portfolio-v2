@@ -61,3 +61,12 @@ body {
 button {
   cursor: pointer;
 }
+
+li {
+  /* @media (max-width: 1024px) { */
+  margin-bottom: 0.5rem;
+  /* } */
+  @media (max-width: 580px) {
+    margin-bottom: 0.25rem;
+  }
+}
