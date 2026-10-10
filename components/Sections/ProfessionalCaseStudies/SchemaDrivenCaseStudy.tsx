@@ -1,6 +1,35 @@
 import ProfessionalCaseStudyCard from './ProfessionalCaseStudyCard';
 
+const caseStudyData = [
+  {
+    title: 'The Problem',
+    description: 'Repeated form work slowed delivery across product workflows.',
+  },
+  {
+    title: 'My Contribution',
+    description:
+      'Architected a reusable schema-driven system in React and TypeScript.',
+  },
+  {
+    title: 'Trade-offs',
+    description:
+      'Mixed forms with standard & image fields require custom handling.',
+  },
+];
 const SchemaDrivenCaseStudy = () => {
+  const displayCaseStudyData = () => {
+    return caseStudyData.map((item) => (
+      <div key={item.title.toLowerCase().replaceAll(/\s+/g, '-')}>
+        <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
+          {item.title}
+        </h4>
+        <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
+          {item.description}
+        </p>
+      </div>
+    ));
+  };
+
   return (
     <ProfessionalCaseStudyCard
       featuredTitle="Featured Case Study"
@@ -44,31 +73,7 @@ const SchemaDrivenCaseStudy = () => {
             Senior Software Engineer · Kellton · 2022–2024
           </p>
           <div className="mt-6 grid gap-8 border-t border-border pt-6 lg:grid-cols-3">
-            <div>
-              <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
-                The Problem
-              </h4>
-              <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
-                Repeated form work slowed delivery across product workflows.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
-                My Contribution
-              </h4>
-              <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
-                Architected a reusable schema-driven system in React and
-                TypeScript.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
-                Trade-offs
-              </h4>
-              <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
-                Reusable patterns must still support differing workflow needs.
-              </p>
-            </div>
+            {displayCaseStudyData()}
           </div>
           <div className="mt-8 border-t border-border pt-6">
             <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">

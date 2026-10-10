@@ -1,4 +1,6 @@
 import ActionLink from '@/components/UI/ActionLink';
+import ExternalLinkIcon from '@/components/Icons/ExternalLinkIcon';
+import ArrowRightIcon from '@/components/Icons/ArrowRightIcon';
 
 interface ProjectCardProps {
   category: string;
@@ -45,14 +47,16 @@ const ProjectCard = ({
         <div className="-mx-4 flex flex-wrap gap-x-2 gap-y-2">
           <ActionLink
             href={repositoryHref}
-            label="View repository ↗"
+            label="View repository"
+            icon={<ExternalLinkIcon />}
             target="_blank"
             rel="noopener noreferrer"
             className={actionClassName}
           />
           <ActionLink
             href={detailsHref}
-            label="Project details →"
+            label="Project details"
+            icon={<ArrowRightIcon />}
             className={actionClassName}
           />
         </div>

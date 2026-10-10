@@ -3,7 +3,7 @@ import ProjectCard from './ProjectCard';
 
 const PersonalProjects = () => {
   return (
-    <div className="border-y border-border">
+    <div className="border-t border-border pt-4">
       <SectionLayout
         id="work"
         ariaLabelledBy="personal-projects-heading"

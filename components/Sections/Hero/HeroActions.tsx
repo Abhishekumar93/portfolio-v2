@@ -1,4 +1,8 @@
 import ActionLink from '@/components/UI/ActionLink';
+import ArrowRightIcon from '@/components/Icons/ArrowRightIcon';
+import DownloadIcon from '@/components/Icons/DownloadIcon';
+import ExternalLinkIcon from '@/components/Icons/ExternalLinkIcon';
+import MailIcon from '@/components/Icons/MailIcon';
 
 interface HeroActionsProps {
   workHref?: string;
@@ -17,13 +21,15 @@ const HeroActions = ({
             <ActionLink
               href={workHref}
               label="View My Work"
-              className="bg-accent font-bold dark:text-black text-white min-h-11"
+              icon={<ArrowRightIcon />}
+              className="font-bold border border-accent min-h-11"
             />
           )}
           {resumeHref && (
             <ActionLink
               href={resumeHref}
               label="Download Resume"
+              icon={<DownloadIcon />}
               download
               className="font-bold border border-accent min-h-11"
             />
@@ -37,16 +43,19 @@ const HeroActions = ({
         <ActionLink
           href="https://www.linkedin.com/in/abhishekr1993/"
           label="LinkedIn"
+          icon={<ExternalLinkIcon />}
           className="border border-accent text-text-secondary px-4 py-3"
         />
         <ActionLink
           href="https://github.com/Abhishekumar93"
           label="GitHub"
+          icon={<ExternalLinkIcon />}
           className="border border-accent text-text-secondary px-4 py-3"
         />
         <ActionLink
           href="mailto:abhishekkr1993@gmail.com"
           label="Email"
+          icon={<MailIcon />}
           className="border border-accent text-text-secondary px-4 py-3"
         />
       </div>

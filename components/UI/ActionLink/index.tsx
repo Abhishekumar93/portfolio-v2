@@ -11,7 +11,7 @@ interface ActionLinkProps {
 }
 
 const defaultClassName =
-  'inline-flex items-center font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent rounded-full px-4';
+  'inline-flex items-center font-semibold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent rounded-full px-4 hover:scale-103 transition-transform duration-200 ease-in-out';
 
 const ActionLink = ({
   href,
@@ -25,13 +25,13 @@ const ActionLink = ({
   return (
     <a
       href={href}
-      className={`${className} ${defaultClassName}`}
+      className={`${className} ${defaultClassName}${icon ? ' gap-2' : ''}`}
       download={download}
       target={target}
       rel={rel}
     >
-      {icon}
       {label}
+      {icon}
     </a>
   );
 };

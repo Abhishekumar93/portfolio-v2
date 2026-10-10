@@ -6,18 +6,18 @@ const expertiseCards = [
     title: 'Frontend Systems',
     items: [
       'React and Next.js',
-      'TypeScript interfaces',
+      'TypeScript & typed systems',
       'Schema-driven forms',
-      'Reusable component design',
+      'Reusable component architecture',
     ],
   },
   {
     title: 'Quality & Delivery',
     items: [
-      'Performance profiling',
-      'Accessible UI practices',
+      'Performance optimization',
+      'Accessible UI / WCAG',
       'Automated UI testing',
-      'Maintainable delivery',
+      'CI/CD & code quality',
     ],
   },
   {
@@ -33,23 +33,25 @@ const expertiseCards = [
 
 const TechnicalExpertise = () => {
   return (
-    <SectionLayout
-      id="expertise"
-      ariaLabelledBy="technical-expertise-heading"
-      eyebrow="03 / Technical Expertise"
-      title="Technical Expertise"
-      subtitle="The systems, quality practices, and team skills behind the work."
-    >
-      <div className="mt-6 grid gap-6 lg:grid-cols-3 lg:gap-8">
-        {expertiseCards.map((card) => (
-          <TechnicalExpertiseCard
-            key={card.title}
-            title={card.title}
-            items={card.items}
-          />
-        ))}
-      </div>
-    </SectionLayout>
+    <div className="border-t border-border pt-4">
+      <SectionLayout
+        id="expertise"
+        ariaLabelledBy="technical-expertise-heading"
+        eyebrow="03 / Technical Expertise"
+        title="Technical Expertise"
+        subtitle="The systems, quality practices, and technical leadership behind the work."
+      >
+        <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {expertiseCards.map((card) => (
+            <TechnicalExpertiseCard
+              key={card.title}
+              title={card.title}
+              items={card.items}
+            />
+          ))}
+        </div>
+      </SectionLayout>
+    </div>
   );
 };
 

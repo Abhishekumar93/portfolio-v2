@@ -21,8 +21,8 @@ const Hero = () => {
             <br /> Systems That Scale
           </h1>
           <p className="mt-4 text-[clamp(0.875rem,3.75vw,1.5rem)] text-text-secondary md:text-lg lg:mt-8">
-            I lead front-end architecture for complex products, improving
-            performance, quality, and the way teams build.
+            I lead frontend architecture for complex products, improving
+            performance, engineering quality, and delivery.
           </p>
         </div>
         <div className="col-span-12 md:col-span-5 md:row-span-2 md:row-start-1">
