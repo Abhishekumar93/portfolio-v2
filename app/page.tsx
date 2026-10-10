@@ -2,6 +2,7 @@ import Hero from '@/components/Sections/Hero';
 import Metrics from '@/components/Sections/Metrics';
 import ProfessionalCaseStudies from '@/components/Sections/ProfessionalCaseStudies';
 import PersonalProjects from '@/components/Sections/PersonalProjects';
+import TechnicalExpertise from '@/components/Sections/TechnicalExpertise';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Metrics />
       <ProfessionalCaseStudies />
       <PersonalProjects />
+      <TechnicalExpertise />
     </main>
   );
 };
