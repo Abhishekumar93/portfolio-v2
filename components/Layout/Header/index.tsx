@@ -15,7 +15,7 @@ const Header = () => {
           className="hidden items-center gap-6 lg:flex"
         >
           {navigationItems.map(({ label, id }) => (
-            <a key={id} href={`#${id}`} className={navigationLinkClassName}>
+            <a key={id} href={`/#${id}`} className={navigationLinkClassName}>
               {label}
             </a>
           ))}

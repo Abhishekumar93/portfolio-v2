@@ -28,6 +28,13 @@ RootLayout
 
 `app/page.tsx` should primarily compose the section components in the required order. Do not duplicate the full page markup across breakpoints or themes.
 
+## Project detail routes
+
+- `app/projects/[slug]/page.tsx` is a Server Component shared by all project detail pages.
+- `lib/projects.ts` reads local `content/projects/*.md` files on the server. Frontmatter slugs determine routes and static params; filenames do not determine public slugs.
+- Frontmatter supplies page metadata and repository actions; the Markdown body supplies the detail sections. Unknown slugs use Next.js `notFound()`.
+- Shared Header and Footer remain in the root layout. Header links target homepage sections from detail pages as well.
+
 ## Project structure
 
 Use a modular, folder-based component structure. A component lives in its own named folder and its implementation entry point is `index.tsx`.

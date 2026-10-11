@@ -6,7 +6,7 @@
 2. Hero: Lead Frontend Engineer, headline, supporting copy, two actions, location/social links, portrait.
 3. Three-metric proof bar.
 4. Professional Case Studies: schema-driven form system first; Sony LIV Bolt second. These are professional, text-led stories without proprietary screenshots or code.
-5. Built in Public: DevTinder and Chatbox in separate cards with repository actions.
+5. Built in Public: DevTinder, Chatbox, and RAWG Games in separate cards with repository actions.
 6. Technical Expertise: Frontend Systems, Quality & Delivery, Technical Leadership.
 7. Engineering Practice: human-reviewed AI workflow and cloud-integrated frontend.
 8. Contact: direct email, LinkedIn, GitHub. No contact form.
@@ -24,7 +24,7 @@ The references are **visual designs**, not verified public copy. Do not invent t
 - No professional screenshots, proprietary code, private links, or customer data. A generic diagram is acceptable only if it accurately represents a shareable system.
 - DevTinder and Chatbox get working repository links. Show “Live demo” only when a maintained live URL actually exists; otherwise remove that action and rebalance the card.
 - Verify resume path, email address, GitHub and LinkedIn URLs. Use `mailto:` for email. Do not ship empty `href`, `#` placeholders, or a decorative contact form.
-- RAWG Games is not part of this approved visual reference; do not add it unless the content scope is deliberately revised.
+- RAWG Games extends the visual reference's content scope with a third card using the existing project-card design. Its repository action links to the `rawg-games` frontend; reserve the companion `api-gateway-game-list` repository and architecture flow for the project detail page.
 
 ## Case-study drafting workflow
 
@@ -36,3 +36,7 @@ The references are **visual designs**, not verified public copy. Do not invent t
 - Only move verified, publication-ready content into `content/portfolio.ts`.
 - `content/portfolio.ts` is the source for shipped typed portfolio content.
 - Do not copy speculative architecture, trade-offs, metrics, employer/client wording, or NDA claims into `content/portfolio.ts`.
+
+## Personal project details
+
+`content/projects/*.md` is the source of truth for personal project detail pages. Frontmatter supplies the title, slug, category, description, technologies, and repository URLs; the body supplies the available sections. Do not duplicate detail copy in React components or invent missing sections or live-demo URLs. Homepage cards keep their concise descriptions and selected technology pills.

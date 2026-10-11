@@ -28,6 +28,14 @@ const PersonalProjects = () => {
             repositoryHref="https://github.com/Abhishekumar93/chatbox-frontend"
             detailsHref="/projects/chatbox"
           />
+          <ProjectCard
+            category="SERVERLESS FRONTEND / CLOUD INTEGRATION"
+            technologies={['Next.js', 'AWS Lambda']}
+            title="RAWG Games"
+            description="A game discovery app using Next.js with AWS API Gateway and Lambda as a serverless API layer."
+            repositoryHref="https://github.com/Abhishekumar93/rawg-games"
+            detailsHref="/projects/rawg-games"
+          />
         </div>
       </SectionLayout>
     </div>
