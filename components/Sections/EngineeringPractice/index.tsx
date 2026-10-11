@@ -3,9 +3,9 @@ import EngineeringPracticeCard from './EngineeringPracticeCard';
 
 const practiceCards = [
   {
-    title: 'Human-reviewed AI workflows',
+    title: 'AI-assisted & agentic workflows',
     description:
-      'Applied to requirement analysis, code review, quality checks, and test generation, with human validation before delivery.',
+      'Used for implementation, code analysis, quality validation, and test generation, with human review before delivery.',
     extraContent: (
       <div>
         <p className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
@@ -17,7 +17,7 @@ const practiceCards = [
           </span>
         </p>
         <p className="mt-3 text-[15px] leading-relaxed text-text-secondary">
-          Primarily driven by AI-assisted test expansion and manual validation
+          Primarily driven by AI-assisted testing and manual validation
         </p>
       </div>
     ),

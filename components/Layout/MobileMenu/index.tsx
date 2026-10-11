@@ -3,20 +3,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import MobileMenuIcon from '@/components/Icons/MobileMenuIcon';
 import Button from '@/components/UI/Button';
-
-interface NavigationItem {
-  label: string;
-  href: string;
-}
-
-// The matching section IDs will be added in the later section implementations.
-const navigationItems: NavigationItem[] = [
-  { label: 'Experience', href: '/#experience' },
-  { label: 'Work', href: '/#work' },
-  { label: 'Expertise', href: '/#expertise' },
-  { label: 'Practice', href: '/#practice' },
-  { label: 'Contact', href: '/#contact' },
-];
+import { navigationItems } from '@/components/Layout/Header/navigation';
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +52,7 @@ const MobileMenu = () => {
         ariaExpanded={isOpen}
         ariaControls={menuId}
         onClick={() => setIsOpen(!isOpen)}
-        className="flex size-11 shrink-0 items-center justify-center rounded-lg text-foreground hover:bg-surface-soft"
+        className="flex size-11 shrink-0 items-center justify-center rounded-lg text-foreground hover:bg-surface-soft lg:hidden"
         extraContent={<MobileMenuIcon isOpen={isOpen} />}
       />
       <nav
@@ -74,13 +61,14 @@ const MobileMenu = () => {
         aria-label="Main navigation"
         aria-hidden={!isOpen}
         inert={!isOpen}
-        className={`absolute inset-x-0 top-full border-b border-border bg-surface px-6 py-3 transition-[opacity,translate,visibility] duration-150 ease-out motion-reduce:translate-y-0 motion-reduce:transition-none md:px-8 lg:px-12 xl:px-0 ${isOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
+        className={`absolute inset-x-0 top-full border-b border-border bg-surface px-6 py-3 transition-[opacity,translate,visibility] duration-150 ease-out motion-reduce:translate-y-0 motion-reduce:transition-none md:px-8 lg:hidden lg:px-12 xl:px-0 ${isOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'}`}
       >
         <ul className="mx-auto space-y-1">
-          {navigationItems.map(({ label, href }) => (
+          {navigationItems.map(({ label, id }) => (
             <li key={label}>
               <a
-                href={href}
+                key={id}
+                href={`/#${id}`}
                 onClick={closeMenu}
                 className={`${itemClassName} text-foreground hover:bg-surface-soft hover:text-accent`}
               >

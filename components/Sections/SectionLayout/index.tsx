@@ -23,7 +23,7 @@ const SectionLayout = ({
     <section
       id={id}
       aria-labelledby={ariaLabelledBy}
-      className="p-6 md:py-8 lg:px-8 lg:py-10"
+      className="scroll-mt-20 p-6 md:py-8 lg:px-8 lg:py-10"
     >
       <p className="text-[clamp(0.75rem,2.5vw,1.25rem)] font-bold uppercase tracking-wider text-accent md:text-[13px]">
         {eyebrow}

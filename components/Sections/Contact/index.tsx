@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import ActionLink from '@/components/UI/ActionLink';
 import ExternalLinkIcon from '@/components/Icons/ExternalLinkIcon';
-import MailIcon from '@/components/Icons/MailIcon';
 
 const opportunityDetails = [
   { label: 'Location', value: 'India' },
@@ -18,7 +17,7 @@ const Contact = () => {
       <section
         id="contact"
         aria-labelledby="contact-heading"
-        className="p-6 md:py-8 lg:px-8 lg:py-10"
+        className="scroll-mt-20 p-6 md:py-8 lg:px-8 lg:py-10"
       >
         <div className="grid grid-cols-12 items-start gap-y-8 md:gap-x-6 lg:gap-x-8">
           <div className="col-span-12 min-w-0 md:col-span-6">
@@ -59,7 +58,7 @@ const Contact = () => {
               href="mailto:abhishekkr1993@gmail.com"
               className="mt-4 block min-h-11 content-center rounded-sm text-base font-semibold leading-relaxed text-accent underline-offset-4 wrap-anywhere hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent md:text-lg lg:text-[22px]"
             >
-              abhishekkr1993@gmail.com <MailIcon />
+              abhishekkr1993@gmail.com
             </a>
             <p className="mt-6 border-t border-border pt-6 text-[15px] leading-relaxed text-text-secondary">
               For roles, collaborations, or technical conversations.

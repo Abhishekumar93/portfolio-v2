@@ -19,7 +19,7 @@ const HeroActions = ({
         <div className="flex flex-wrap gap-4">
           {workHref && (
             <ActionLink
-              href={workHref}
+              href={`#${workHref}`}
               label="View My Work"
               icon={<ArrowRightIcon />}
               className="font-bold border border-accent min-h-11"
@@ -37,7 +37,7 @@ const HeroActions = ({
         </div>
       )}
       <div className="flex flex-wrap items-center gap-4 text-text-secondary text-xs xl:text-sm mt-0 md:mt-2 lg:mt-4">
-        <div className="border border-accent rounded-full px-4 py-3 items-center flex text-text-secondary w-fit">
+        <div className="border border-text-secondary rounded-full px-4 py-3 items-center flex text-text-secondary w-fit">
           India . Open to opportunities
         </div>
         <ActionLink

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import ThemeProvider from '@/components/Theme/Provider';
 import Header from '@/components/Layout/Header';
+import Footer from '@/components/Layout/Footer';
 import './globals.css';
 
 const geistSans = Geist({
@@ -27,10 +28,13 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body id="top" className="min-h-full flex flex-col">
         <ThemeProvider>
           <Header />
-          <div className="max-w-6xl mx-auto">{children}</div>
+          <div className="max-w-6xl mx-auto">
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>

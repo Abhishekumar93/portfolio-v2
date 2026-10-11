@@ -12,7 +12,7 @@
 8. Contact: direct email, LinkedIn, GitHub. No contact form.
 9. Minimal footer with copyright and back-to-top action.
 
-The header's **Experience** link targets Professional Case Studies; **Work** targets Built in Public. Expertise, Practice, and Contact target their matching sections. Every visible link must have a real destination before launch. The primary hero action scrolls to Professional Case Studies; the résumé action opens or downloads the actual résumé.
+The header's **Experience** link targets Professional Case Studies; **Work** targets Built in Public. Expertise, Practice, and Contact target their matching sections. Every visible link must have a real destination before launch. The primary hero action scrolls to Professional Case Studies; the resume action opens or downloads the actual resume.
 
 ## Content and publication checks
 
@@ -23,7 +23,7 @@ The references are **visual designs**, not verified public copy. Do not invent t
 - Confirm employer/client naming, the six-person team description, all metrics, and the precise NDA/public-disclosure wording before publication. If “NDA Protected” is not legally accurate, use a truthful short label with the same badge treatment.
 - No professional screenshots, proprietary code, private links, or customer data. A generic diagram is acceptable only if it accurately represents a shareable system.
 - DevTinder and Chatbox get working repository links. Show “Live demo” only when a maintained live URL actually exists; otherwise remove that action and rebalance the card.
-- Verify résumé path, email address, GitHub and LinkedIn URLs. Use `mailto:` for email. Do not ship empty `href`, `#` placeholders, or a decorative contact form.
+- Verify resume path, email address, GitHub and LinkedIn URLs. Use `mailto:` for email. Do not ship empty `href`, `#` placeholders, or a decorative contact form.
 - RAWG Games is not part of this approved visual reference; do not add it unless the content scope is deliberately revised.
 
 ## Case-study drafting workflow
