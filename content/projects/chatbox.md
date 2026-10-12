@@ -115,5 +115,5 @@ It does not implement horizontal Socket.IO scaling with Redis, offline push noti
 
 ## Repositories
 
-- Frontend: https://github.com/Abhishekumar93/chatbox-frontend
-- Backend: https://github.com/Abhishekumar93/chatbox-backend
+- Frontend: [chatbox-frontend](https://github.com/Abhishekumar93/chatbox-frontend)
+- Backend: [chatbox-backend](https://github.com/Abhishekumar93/chatbox-backend)

@@ -121,5 +121,5 @@ For that reason, the portfolio should treat the repository and project-detail pa
 
 ## Repositories
 
-- Frontend: https://github.com/Abhishekumar93/rawg-games
-- Serverless backend: https://github.com/Abhishekumar93/api-gateway-game-list
+- Frontend: [rawg-games](https://github.com/Abhishekumar93/rawg-games)
+- Serverless backend: [api-gateway-game-list](https://github.com/Abhishekumar93/api-gateway-game-list)

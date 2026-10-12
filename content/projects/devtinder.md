@@ -91,5 +91,5 @@ MSW is used on the frontend and an in-memory MongoDB instance is used on the bac
 
 ## Repositories
 
-- Frontend: https://github.com/Abhishekumar93/dev-tinder-frontend
-- Backend: https://github.com/Abhishekumar93/dev-tinder-backend
+- Frontend: [dev-tinder-frontend](https://github.com/Abhishekumar93/dev-tinder-frontend)
+- Backend: [dev-tinder-backend](https://github.com/Abhishekumar93/dev-tinder-backend)
