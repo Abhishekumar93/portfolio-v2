@@ -98,8 +98,8 @@ Use the testing tools already configured in the repository.
 
 For React Testing Library:
 
-- prefer `userEvent` for user interactions
-- use `fireEvent` only when a lower-level event is specifically required or existing project conventions justify it
+- follow the existing `fireEvent` interaction convention; `@testing-library/user-event` is not installed
+- if `userEvent` is later installed for a justified test need, prefer it for user interactions and reserve `fireEvent` for lower-level events
 - use `findBy*` or `waitFor` for meaningful async behavior
 - never use arbitrary sleep delays
 
@@ -204,7 +204,7 @@ Coverage is a diagnostic tool, not the goal.
 
 1. Run the target test file.
 2. Fix all failures.
-3. Run coverage for the relevant source scope.
+3. Run coverage for the relevant source scope only when a coverage provider is available; the current repository has none configured.
 4. Review uncovered meaningful lines and branches.
 5. Add tests only when uncovered code represents meaningful behavior or regression risk.
 6. Do not add artificial tests just to increase percentage.
@@ -225,7 +225,7 @@ For each target:
 7. Write or update focused integration tests.
 8. Run the target tests.
 9. Fix failures until the suite passes.
-10. Run coverage.
+10. Run coverage when configured; otherwise report `N/A — no coverage provider configured`.
 11. Review uncovered meaningful behavior.
 12. Add useful missing coverage where justified.
 13. Remove redundant or implementation-detail tests.
@@ -244,15 +244,18 @@ Do not introduce a new test framework when the existing configured framework can
 
 ## File naming
 
-Follow the repository's existing test-file convention.
-
-If no convention exists, prefer co-located files such as:
+Follow the current discovery pattern in `vitest.config.mts`: tests belong under
+`tests/` and use `.test.ts` or `.test.tsx`. Match nearby file naming, for example:
 
 ```text
-ComponentName.test.tsx
+tests/mobile-menu.test.tsx
+tests/pre-push.test.ts
 ```
 
 ## Browser tests
+
+Playwright is not currently installed or configured. The following guidance
+applies only if a future task explicitly introduces browser testing.
 
 Use Playwright only where a real browser materially improves confidence, such as:
 
@@ -267,16 +270,19 @@ Do not duplicate the whole React Testing Library suite in Playwright.
 
 Use the repository's actual scripts.
 
-Typical commands may include:
+Current commands include:
 
 ```bash
-npm run test
-npm run test:coverage
+npm test
+npm test -- tests/mobile-menu.test.tsx
 npm run lint
 npm run build
 ```
 
-For focused coverage, use the configured test runner's supported file filtering instead of inventing commands that do not match the repository.
+There is no coverage script or provider configured today. Report coverage as
+`N/A` until that tooling exists; do not invent a coverage command or install a
+provider solely to complete the reporting checklist. When coverage becomes
+available, use the configured runner's supported file filtering.
 
 ## Final report
 

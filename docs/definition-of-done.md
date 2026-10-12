@@ -83,7 +83,7 @@ Explicitly report:
 - Named arrow-function component convention is followed.
 - Default export is separate at the end of component files.
 - Component-specific types are colocated correctly.
-- Shared types are placed under root `types/` by domain.
+- If shared types were introduced, their placement follows `docs/coding-standards.md`; a root `types/` directory is not currently implemented.
 - No long repeated `className` patterns were introduced.
 - No business/content data was embedded inside layout-only components.
 - No unnecessary `"use client"` directive was added.
@@ -116,7 +116,7 @@ Explicitly report:
 - Every shipped link has a verified destination.
 - No `href="#"`, empty `href`, or placeholder URL exists in completed scope.
 - No `lorem ipsum`, `TODO`, or `TBD` remains in completed scope.
-- Case-study content shipped from `content/portfolio.ts` is verified; unverified copy remains only in `content/drafts/`.
+- Shipped case-study copy in its owning files under `components/Sections/ProfessionalCaseStudies/` is verified, and unverified wording is kept out of published content according to `docs/content.md`.
 
 ### Motion
 

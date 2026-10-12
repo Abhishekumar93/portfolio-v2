@@ -21,4 +21,5 @@ Motion should reinforce hierarchy, feedback, and polish without becoming a visua
 - Prefer CSS/Tailwind transitions for simple interaction states.
 - Add a motion library only if a later interaction genuinely requires it.
 - Respect `prefers-reduced-motion: reduce`.
+- Remove or substantially reduce non-essential transforms and entrance animations for reduced-motion users.
 - Animation must not introduce layout shift, hydration issues, or noticeable performance regressions.

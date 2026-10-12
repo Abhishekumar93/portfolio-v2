@@ -47,19 +47,39 @@ Visual-reference matching does not grant permission to rewrite existing tuned va
 
 For example, a task that adds a portrait may add the portrait container and its required layout styles, but it must not silently change an already tuned heading font size, text width, mobile padding, or tablet spacing unless the task specifically requests those changes.
 
-## Sources of truth
+## Sources of truth and specification status
 
-Place the approved references in `design-reference/`:
+This document owns the retained visual specification. The current implementation
+in `app/layout.tsx`, `app/globals.css`, and the owning component files records the
+manually tuned values. The layout, typography, and spacing guidance below is a
+design baseline, not a claim that every value is currently implemented. Preserve
+existing tuning under the rules above when specifications and code differ.
 
-- `design-reference/whitepaper-desktop-reference.svg` — light desktop, primary visual reference.
-- `design-reference/whitepaper-dark-desktop-reference.svg` — dark desktop, same composition. Its portrait crop removes the bottom gap.
+The earlier desktop SVG reference files are no longer part of this repository.
+Do not treat an external reference asset or private working note as a required
+public architecture file.
+
 - `public/images/profile/abhishek-hero.png` — approved transparent portrait. Use this original with `next/image`; do not regenerate, retouch, or alter the face.
 
-These are **desktop visual references at 1440px**, not fixed-coordinate layouts or completed mobile mockups. The responsive rules below define how to derive smaller screens. Light and dark must use **identical structure, spacing, responsive behavior, content order, and portrait crop**; only color and theme-control state change. Use the corrected bottom-aligned portrait treatment in both themes so no exposed strip appears below the cutout.
+The retained desktop composition targets 1440px; the responsive rules below
+describe the design baseline for smaller screens. Light and dark must use
+**identical structure, spacing, responsive behavior, content order, and portrait
+crop**; only color and theme-control state change. Keep the bottom-aligned
+portrait treatment in both themes so no exposed strip appears below the cutout.
+
+## Known differences requiring design confirmation
+
+- The specification names Inter, but `app/layout.tsx` currently loads Geist and Geist Mono through `next/font`. `app/globals.css` maps Tailwind font tokens to those fonts and sets the body fallback to Arial/Helvetica/sans-serif.
+- Several implemented type sizes, gutters, section spacing values, and layouts differ from the baseline below. For example, Hero uses a two-column layout from `md`, and Contact uses a 6/6 split from `md`, while the baseline calls for desktop splits from 1024px.
+- Some specified color roles are not implemented as separate tokens: Built in Public cards use the shared surface/border tokens, and dark NDA colors alias the shared surface and secondary-text tokens in `app/globals.css`.
+
+Confirm whether the baseline should be revised to match approved current tuning
+before making a separate visual change. Documentation cleanup does not authorize
+changing fonts, layout, or tokens.
 
 ## Layout and breakpoints
 
-Use a fluid container with `max-width: 1152px` and center it. Never reproduce the SVG's absolute x/y coordinates. A section can use an internal grid while its outer edges remain aligned to the same container.
+Use a fluid container with `max-width: 1152px` and center it. Use responsive layout rather than fixed design coordinates. A section can use an internal grid while its outer edges remain aligned to the same container.
 
 | Viewport         |         Horizontal gutter | Layout behavior                                                                                                                                                       |
 | ---------------- | ------------------------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -116,7 +136,11 @@ The accent is sparse: eyebrows, primary buttons, links, numerical highlights, ch
 
 ## Typography
 
-Use **Inter** as a variable font, loaded through `next/font` if available. Define a sensible sans-serif fallback. Use real weights 400, 500, 600, and 700; the SVG's fractional weights are visual approximations. All text remains selectable and semantic HTML, never text embedded in images.
+The retained typography specification calls for **Inter** as a variable font,
+loaded through `next/font` if available, with a sensible sans-serif fallback.
+The current font implementation differs as noted above; do not replace it during
+unrelated work. Use real weights 400, 500, 600, and 700. All text remains
+selectable and semantic HTML, never text embedded in images.
 
 | Role                       |                       Mobile |  Tablet |                      Desktop | Line height / treatment          |
 | -------------------------- | ---------------------------: | ------: | ---------------------------: | -------------------------------- |

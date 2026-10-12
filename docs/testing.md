@@ -2,6 +2,17 @@
 
 Testing should evolve alongside implementation, but tests should be added based on behavioral risk rather than mechanically for every component or file.
 
+## Current test setup
+
+- Vitest is configured in `vitest.config.mts`, with `jsdom` as the default environment and the repository-root `@` alias.
+- Tests live under `tests/`; discovery is limited to `tests/**/*.test.{ts,tsx}`. Component-colocated tests outside that directory are not currently discovered.
+- `tests/mobile-menu.test.tsx`, `tests/theme-toggle.test.tsx`, and `tests/footer.test.tsx` cover navigation, theme behavior, and the shared footer/back-to-top action. `tests/pre-push.test.ts` uses the Node environment to check hook execution and failure handling.
+- React Testing Library is installed. Existing interaction tests use `fireEvent`; `@testing-library/user-event`, Playwright, and a Vitest coverage provider are not currently installed.
+- `npm test` runs `vitest run` once. There is no coverage script or configured coverage threshold.
+- `.husky/pre-push` runs formatting, lint, then tests, stopping at the first failure. `.github/workflows/ci.yml` runs those checks and a production build.
+
+Test-writing execution guidance belongs to [test-writer.md](test-writer.md).
+
 ## What to test
 
 Prioritize tests for user-observable behavior, state, interaction, accessibility, and regression-prone logic.
