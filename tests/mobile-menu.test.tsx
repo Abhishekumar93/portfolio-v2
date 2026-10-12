@@ -50,7 +50,7 @@ test('the header links target the real portfolio sections with native anchors', 
   expect(navigation.getAllByRole('link')).toHaveLength(destinations.length);
   for (const [label, id] of destinations) {
     const link = navigation.getByRole('link', { name: label });
-    expect(link.getAttribute('href')).toBe(`#${id}`);
+    expect(link.getAttribute('href')).toBe(`/#${id}`);
     expect(document.getElementById(id)?.tagName).toBe('SECTION');
   }
 });
