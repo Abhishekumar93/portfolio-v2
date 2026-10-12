@@ -1,68 +1,97 @@
-# Hi, I'm Abhishek Kumar 👋
+# Portfolio V2
 
-### Lead Frontend Engineer · React · Next.js · TypeScript
+Personal engineering portfolio for **Abhishek Kumar**, a Lead Frontend Engineer focused on frontend architecture, performance, engineering quality, and technical leadership.
 
-I’m a frontend engineer with nearly eight years of experience building scalable, high-performance and maintainable web applications.
+## Live Site
 
-My work focuses on frontend architecture, performance optimization, reusable component systems, accessibility, engineering quality and technical delivery. I lead technical decisions, mentor engineers and collaborate across product, design and backend teams to turn complex requirements into reliable user experiences.
+https://portfolio-v2-red-six-39.vercel.app/
 
-**Portfolio:** https://portfolio-v2-red-six-39.vercel.app/
+## Overview
 
-## Engineering Focus
+This portfolio presents selected professional case studies and public projects that demonstrate:
 
-- Frontend architecture with React, Next.js and TypeScript
-- Performance optimization and scalable rendering patterns
-- Reusable component systems and frontend platform design
-- Responsive and accessible user interfaces
-- State management and server-state integration
-- UI integration testing and maintainable test suites
-- Code reviews, engineering standards and mentorship
-- CI/CD and cloud-integrated frontend delivery
-- Human-reviewed AI-assisted and agentic development workflows
+- Frontend architecture with React, Next.js, and TypeScript
+- Performance optimization
+- Reusable component systems
+- Accessibility and engineering quality
+- Technical leadership and mentorship
+- Cloud-integrated frontend delivery
+- Human-reviewed AI-assisted engineering workflows
 
-## Selected Projects
+Professional case studies are intentionally text-led and exclude proprietary code and screenshots.
 
-### [DevTinder Frontend](https://github.com/Abhishekumar93/dev-tinder-frontend)
+## Tech Stack
 
-A developer-networking application built with React, TypeScript, Vite, Zustand and SWR, featuring authentication flows, profile discovery, connection management and comprehensive UI integration testing with Vitest and React Testing Library.
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- next-themes
+- react-markdown
+- gray-matter
+- Vitest
+- React Testing Library
+- GitHub Actions
+- Husky
+- Prettier
+- ESLint
 
-- [Frontend repository](https://github.com/Abhishekumar93/dev-tinder-frontend)
-- [Backend repository](https://github.com/Abhishekumar93/dev-tinder-backend)
+## Portfolio Structure
 
-### [Chatbox](https://github.com/Abhishekumar93/chatbox-frontend)
+The homepage is organized into:
 
-A full-stack real-time messaging project with separate frontend and backend applications, demonstrating reusable UI architecture, authenticated client-server communication, Socket.IO-based messaging and real-time presence handling.
+1. Hero
+2. Engineering metrics
+3. Professional Case Studies
+4. Built in Public
+5. Technical Expertise
+6. Engineering Practice
+7. Contact
 
-- [Frontend repository](https://github.com/Abhishekumar93/chatbox-frontend)
-- [Backend repository](https://github.com/Abhishekumar93/chatbox-backend)
+The professional case studies cover two areas of work on the **Sony LIV Bolt** product:
 
-### [RAWG Games](https://github.com/Abhishekumar93/rawg-games)
+- Schema-driven form architecture
+- Frontend performance, delivery, and technical leadership
 
-A responsive game-discovery application built with Next.js and TypeScript, using AWS API Gateway and Lambda as a serverless API layer between the frontend and the RAWG API.
+The public project section includes:
 
-- [Frontend repository](https://github.com/Abhishekumar93/rawg-games)
-- [Serverless API repository](https://github.com/Abhishekumar93/api-gateway-game-list)
+- DevTinder
+- Chatbox
+- RAWG Games
 
-## Technology
+Each public project has a dedicated Markdown-driven detail page.
 
-**Frontend:** React, Next.js, TypeScript, JavaScript, HTML5, CSS, Tailwind CSS
+## Project Architecture
 
-**State & Data:** Redux Toolkit, Zustand, SWR, React Query
-
-**Testing & Quality:** Vitest, Jest, React Testing Library, WCAG, SonarQube
-
-**Backend & APIs:** Node.js, Express, REST APIs, GraphQL, MongoDB, JWT Authentication
-
-**Cloud & Delivery:** AWS Lambda, API Gateway, CloudFront, Lambda@Edge, CI/CD, Git
-
-## Beyond Frontend
-
-Frontend engineering remains my core specialization, while I continue expanding my backend, cloud and DevOps knowledge to make stronger architectural decisions across the complete product-development lifecycle.
-
-## Opportunities
-
-I’m open to remote **Lead Frontend Engineer** and **Senior Frontend Engineer** opportunities with product-focused teams where I can contribute to architecture, technical decisions, engineering quality, performance and mentorship.
-
-- [Portfolio](https://portfolio-v2-red-six-39.vercel.app/)
-- [LinkedIn](https://www.linkedin.com/in/abhishekr1993/)
-- [Email](mailto:abhishekkr1993@gmail.com)
+```text
+app/
+  layout.tsx                         # shared shell and theme provider
+  page.tsx                           # homepage section composition
+  globals.css                        # Tailwind setup and semantic theme tokens
+  projects/[slug]/page.tsx            # Markdown project detail route
+components/
+  Layout/                            # Header/, MobileMenu/, Footer/
+  Sections/                          # homepage sections and SectionLayout/
+    ProfessionalCaseStudies/         # colocated study/card files
+    PersonalProjects/                # section and ProjectCard.tsx
+  UI/                                # ActionLink/, Button/
+  Theme/                             # Provider/, Toggle/
+  Icons/                             # flat reusable SVG .tsx files
+content/projects/                    # devtinder.md, chatbox.md, rawg-games.md
+lib/projects.ts                      # server-only Markdown loader
+public/
+  images/profile/abhishek-hero.png     # approved portrait
+docs/                               # topic owners listed below
+tests/                              # Vitest .test.ts / .test.tsx files
+package.json                         # dependencies and scripts
+package-lock.json                    # npm lockfile
+next.config.ts
+tsconfig.json                       # @/* resolves from the repository root
+postcss.config.mjs                    # Tailwind PostCSS plugin
+eslint.config.mjs
+vitest.config.mts
+.prettierrc
+.nvmrc                               # local and CI Node.js version
+.github/workflows/ci.yml              # quality checks
+.husky/pre-push                       # local push checks
+```
