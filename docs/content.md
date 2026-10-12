@@ -18,7 +18,7 @@ The header's **Experience** link targets Professional Case Studies; **Work** tar
 
 The references are **visual designs**, not verified public copy. Do not invent technical details to fill a card.
 
-- Keep the 90% reduction with the earlier **Senior Software Engineer** schema-driven form work. The 45% load-time result and mentoring of three engineers belong to the **Lead Engineer** work. Nearly eight years is a time-sensitive claim; update it when needed. The AI-assisted coverage result is **+5 percentage points**, not a 35% AI result.
+- Keep the 90% reduction with the earlier **Senior Software Engineer** schema-driven form work. The 45% load-time result and mentoring of three engineers belong to the **Lead Engineer** work. Nearly eight years is a time-sensitive claim; update it when needed. The AI-assisted coverage result is **10+ percentage points**, not a 35% AI result.
 - Draft the two professional case studies from actual, shareable context, decision, alternatives/trade-offs, and outcome. The reference's short problem and trade-off sentences are provisional. Do not claim TypeScript generics, Formik rejection, hook registries, 15+ workflows, or other specific architecture unless confirmed.
 - Confirm employer/client naming, the six-person team description, all metrics, and the precise NDA/public-disclosure wording before publication. If “NDA Protected” is not legally accurate, use a truthful short label with the same badge treatment.
 - No professional screenshots, proprietary code, private links, or customer data. A generic diagram is acceptable only if it accurately represents a shareable system.

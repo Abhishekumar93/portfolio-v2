@@ -35,14 +35,12 @@ const SchemaDrivenCaseStudy = () => {
       featuredTitle="Featured Case Study"
       featuredContent={
         <>
-          <div className="mt-4 md:mt-6 lg:mt-8">
-            <p className="text-[clamp(3rem,6.75vw,4.5rem)] md:text-[clamp(4rem,7vw,5rem)] font-bold leading-none tracking-tight text-accent">
-              90%
-            </p>
-            <p className="mt-4 text-[clamp(0.875rem,4vw,1rem)] font-semibold leading-normal text-foreground">
-              less feature-development time
-            </p>
-          </div>
+          <p className="mt-4 text-[clamp(3rem,6.75vw,4.5rem)] md:text-[clamp(2rem,5vw,3rem)] font-bold leading-none tracking-tight text-accent">
+            90%
+          </p>
+          <p className="mt-4 text-[clamp(0.875rem,4vw,1rem)] leading-normal text-foreground">
+            less feature-development time
+          </p>
           <p className="mt-4 md:mt-6 lg:mt-8 border-t border-border pt-6 text-[clamp(1rem,4vw,1.15rem)] font-semibold leading-normal text-foreground">
             Schema-driven form architecture
           </p>
@@ -61,6 +59,7 @@ const SchemaDrivenCaseStudy = () => {
           </ul>
         </>
       }
+      featuredHeading="Schema-driven form architecture for complex product workflows."
       detailsContent={
         <>
           <h3
@@ -87,6 +86,7 @@ const SchemaDrivenCaseStudy = () => {
           </div>
         </>
       }
+      detailsHeading="Architecture"
     />
   );
 };

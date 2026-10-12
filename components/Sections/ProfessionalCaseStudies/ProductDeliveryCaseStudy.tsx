@@ -16,34 +16,23 @@ const ProductDeliveryCaseStudy = () => {
     <ProfessionalCaseStudyCard
       featuredTitle="Professional Work / Product Delivery"
       featuredContent={
-        <>
-          <h3
-            id="sony-liv-case-study-heading"
-            className="mt-4 wrap-break-word text-[clamp(1.25rem,4.15vw,1.5rem)] font-bold leading-tight tracking-tight text-foreground md:text-[26px] lg:text-[30px]"
-          >
-            Sony LIV Bolt
-          </h3>
-          <p className="mt-4 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] leading-relaxed text-text-secondary">
-            Frontend performance, architecture, and delivery with a seven-person
-            product engineering team.
-          </p>
-          <dl className="mt-6 grid gap-3 grid-cols-2">
-            {sonyLivMetrics.map(({ value, label }) => (
-              <div
-                key={label}
-                className="rounded-xl border border-border bg-surface px-3 py-5"
-              >
-                <dt className="text-[clamp(3rem,6.75vw,4.5rem)] md:text-[clamp(2rem,5vw,3rem)] font-bold leading-none tracking-tight text-accent">
-                  {value}
-                </dt>
-                <dd className="mt-3 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] font-medium leading-normal text-text-secondary">
-                  {label}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </>
+        <dl className="mt-6 grid gap-3 grid-cols-2">
+          {sonyLivMetrics.map(({ value, label }) => (
+            <div
+              key={label}
+              className="rounded-xl border border-border bg-surface px-3 py-5"
+            >
+              <dt className="text-[clamp(3rem,6.75vw,4.5rem)] md:text-[clamp(2rem,5vw,3rem)] font-bold leading-none tracking-tight text-accent">
+                {value}
+              </dt>
+              <dd className="mt-3 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] font-medium leading-normal text-text-secondary">
+                {label}
+              </dd>
+            </div>
+          ))}
+        </dl>
       }
+      featuredHeading="Frontend performance, architecture, and delivery with a six-person product engineering team."
       detailsContent={
         <>
           <div className="mt-6">
@@ -56,12 +45,13 @@ const ProductDeliveryCaseStudy = () => {
           <div className="mt-6 border-t border-border pt-6">
             <h4 className={detailHeadingClassName}>Leadership</h4>
             <ul className={detailListClassName}>
-              <li>Coordinated a seven-person delivery team</li>
+              <li>Coordinated a six-person delivery team</li>
               <li>Mentored three frontend engineers</li>
             </ul>
           </div>
         </>
       }
+      detailsHeading="Performance & Delivery"
     />
   );
 };

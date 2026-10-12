@@ -25,7 +25,7 @@ const Metrics = () => {
       <dl className="mx-auto grid divide-y divide-border border-y border-divider sm:grid-cols-3 sm:divide-x sm:divide-y-0">
         <MetricItem title="Nearly 8 years" subtitle="Front-end engineering" />
         <MetricItem title="45% lower" subtitle="Initial page load time" />
-        <MetricItem title="7 engineers" subtitle="Mentored" />
+        <MetricItem title="7 engineers" subtitle="Mentored across roles" />
       </dl>
     </section>
   );
