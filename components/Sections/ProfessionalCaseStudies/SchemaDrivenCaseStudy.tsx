@@ -1,35 +1,9 @@
 import ProfessionalCaseStudyCard from './ProfessionalCaseStudyCard';
 
-const caseStudyData = [
-  {
-    title: 'The Problem',
-    description: 'Repeated form work slowed delivery across product workflows.',
-  },
-  {
-    title: 'My Contribution',
-    description:
-      'Architected a reusable schema-driven system in React and TypeScript.',
-  },
-  {
-    title: 'Trade-offs',
-    description:
-      'Mixed forms with standard & image fields require custom handling.',
-  },
-];
-const SchemaDrivenCaseStudy = () => {
-  const displayCaseStudyData = () => {
-    return caseStudyData.map((item) => (
-      <div key={item.title.toLowerCase().replaceAll(/\s+/g, '-')}>
-        <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
-          {item.title}
-        </h4>
-        <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
-          {item.description}
-        </p>
-      </div>
-    ));
-  };
+const headingClassName =
+  'text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent';
 
+const SchemaDrivenCaseStudy = () => {
   return (
     <ProfessionalCaseStudyCard
       featuredTitle="Featured Case Study"
@@ -41,13 +15,10 @@ const SchemaDrivenCaseStudy = () => {
           <p className="mt-4 text-[clamp(0.875rem,4vw,1rem)] leading-normal text-foreground">
             less feature-development time
           </p>
-          <p className="mt-4 md:mt-6 lg:mt-8 border-t border-border pt-6 text-[clamp(1rem,4vw,1.15rem)] font-semibold leading-normal text-foreground">
+          <p className="mt-4 border-t border-border pt-6 text-[clamp(1rem,4vw,1.15rem)] font-semibold leading-normal text-foreground md:mt-6 lg:mt-8">
             Schema-driven form architecture
           </p>
-          <ul
-            aria-label="Technologies"
-            className="mt-4 md:mt-6 lg:mt-8 flex flex-wrap gap-2"
-          >
+          <ul aria-label="Technologies" className="mt-4 flex flex-wrap gap-2 md:mt-6 lg:mt-8">
             {['React', 'TypeScript', 'Reusable UI'].map((technology) => (
               <li
                 key={technology}
@@ -71,20 +42,35 @@ const SchemaDrivenCaseStudy = () => {
           <p className="mt-4 text-[clamp(0.875rem,1.5vw,1rem)] leading-relaxed text-text-secondary">
             Senior Software Engineer · Kellton · 2022–2024
           </p>
-          <div className="mt-6 grid gap-8 border-t border-border pt-6 lg:grid-cols-3">
-            {displayCaseStudyData()}
-          </div>
-          <div className="mt-8 border-t border-border pt-6">
-            <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
-              Outcome
-            </h4>
-            <ul className="mt-4 list-disc space-y-3 pl-6 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-normal text-foreground marker:text-accent md:text-lg">
-              <li>90% less feature-development time</li>
-              <li>Faster delivery of new form features</li>
-              <li>Reusable architecture across form workflows</li>
-            </ul>
+          <div className="mt-6 border-t border-border pt-6">
+            <h4 className={headingClassName}>The Problem</h4>
+            <p className="mt-3 text-[clamp(0.75rem,3.25vw,1rem)] leading-relaxed text-text-secondary md:text-[clamp(0.75rem,1.35vw,1rem)]">
+              Similar forms were copied across product modules, duplicating logic and slowing development and maintenance.
+            </p>
           </div>
         </>
+      }
+      fullWidthContent={
+        <div className="space-y-6">
+          <section>
+            <h4 className={headingClassName}>My Contribution</h4>
+            <p className="mt-3 leading-relaxed text-text-secondary">
+              Built a schema-driven form system with React and TypeScript, centralizing field changes, prefilling, conditional expressions, tab visibility, and action-button states in reusable components.
+            </p>
+          </section>
+          <section className="border-t border-border pt-6">
+            <h4 className={headingClassName}>Trade-offs</h4>
+            <p className="mt-3 leading-relaxed text-text-secondary">
+              Kept shared behavior centralized while allowing module-specific API endpoints, success handlers, and specialized form fields.
+            </p>
+          </section>
+          <section className="border-t border-border pt-6">
+            <h4 className={headingClassName}>Outcome</h4>
+            <p className="mt-3 leading-relaxed text-text-secondary">
+              Reduced development time for similar form-based features by approximately 90%, with less copy-pasted logic to maintain.
+            </p>
+          </section>
+        </div>
       }
       detailsHeading="Architecture"
     />
