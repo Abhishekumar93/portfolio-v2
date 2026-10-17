@@ -4,12 +4,46 @@ const sonyLivMetrics = [
   { value: '45%', label: 'lower initial load' },
   { value: '3', label: 'engineers mentored' },
 ];
-
+const contentTitles = [
+  { id: 'architectural_focus', title: 'Architectural Focus' },
+  { id: 'engineering_quality', title: 'Engineering Quality' },
+  { id: 'leadership', title: 'Leadership' },
+] as const;
+const contentDetails = {
+  architectural_focus: [
+    'Improved initial loading performance by ~45% through rendering optimization, code splitting, and data-fetching improvements.',
+    'Designed and maintained frontend architecture for an API-driven product.',
+  ],
+  engineering_quality: [
+    'Reduced SonarQube code duplication from ~6% to as low as 2.2% through frontend refactoring.',
+    'Helped increase project test coverage from ~35% to over 90% using Jest and React Testing Library.',
+  ],
+  leadership: [
+    'Coordinated frontend delivery within a six-person engineering team.',
+    'Mentored three engineers through code reviews and technical guidance.',
+  ],
+};
 const detailHeadingClassName =
   'text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent';
 
 const detailListClassName =
   'mt-4 list-disc space-y-3 pl-6 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] font-medium leading-relaxed text-foreground marker:text-accent';
+
+const displayCaseStudyData = () => {
+  return contentTitles.map((item, titleIndex) => (
+    <div
+      key={item.id}
+      className={`mt-6 ${titleIndex > 0 ? 'border-t border-border pt-6' : ''}`}
+    >
+      <h4 className={detailHeadingClassName}>{item.title}</h4>
+      <ul className={detailListClassName}>
+        {contentDetails[item.id].map((detail, detailIndex) => (
+          <li key={`${item.id}_${detailIndex}`}>{detail}</li>
+        ))}
+      </ul>
+    </div>
+  ));
+};
 
 const ProductDeliveryCaseStudy = () => {
   return (
@@ -33,24 +67,7 @@ const ProductDeliveryCaseStudy = () => {
         </dl>
       }
       featuredHeading="Frontend performance, architecture, and delivery with a six-person product engineering team."
-      detailsContent={
-        <>
-          <div className="mt-6">
-            <h4 className={detailHeadingClassName}>Architectural Focus</h4>
-            <ul className={detailListClassName}>
-              <li>Frontend decisions for an API-driven product</li>
-              <li>Initial page-load performance improvement</li>
-            </ul>
-          </div>
-          <div className="mt-6 border-t border-border pt-6">
-            <h4 className={detailHeadingClassName}>Leadership</h4>
-            <ul className={detailListClassName}>
-              <li>Coordinated a six-person delivery team</li>
-              <li>Mentored three frontend engineers</li>
-            </ul>
-          </div>
-        </>
-      }
+      detailsContent={displayCaseStudyData()}
       detailsHeading="Performance & Delivery"
     />
   );

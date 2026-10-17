@@ -3,23 +3,27 @@ import ProfessionalCaseStudyCard from './ProfessionalCaseStudyCard';
 const caseStudyData = [
   {
     title: 'The Problem',
-    description: 'Repeated form work slowed delivery across product workflows.',
+    description:
+      'Forms across multiple modules duplicated business logic, slowing development and making maintenance difficult.Forms across multiple modules duplicated business logic, slowing development and making maintenance difficult.',
   },
   {
     title: 'My Contribution',
     description:
-      'Architected a reusable schema-driven system in React and TypeScript.',
+      'Built schema-driven forms and reusable React/TypeScript components for shared form behavior.',
   },
   {
     title: 'Trade-offs',
     description:
-      'Mixed forms with standard & image fields require custom handling.',
+      'Centralized common logic while keeping APIs, success handlers, and specialized fields configurable.',
   },
 ];
 const SchemaDrivenCaseStudy = () => {
   const displayCaseStudyData = () => {
-    return caseStudyData.map((item) => (
-      <div key={item.title.toLowerCase().replaceAll(/\s+/g, '-')}>
+    return caseStudyData.map((item, titleIndex) => (
+      <div
+        key={item.title.toLowerCase().replaceAll(/\s+/g, '-')}
+        className={titleIndex > 0 ? 'pt-8' : ''}
+      >
         <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
           {item.title}
         </h4>
@@ -71,7 +75,7 @@ const SchemaDrivenCaseStudy = () => {
           <p className="mt-4 text-[clamp(0.875rem,1.5vw,1rem)] leading-relaxed text-text-secondary">
             Senior Software Engineer · Kellton · 2022–2024
           </p>
-          <div className="mt-6 grid gap-8 border-t border-border pt-6 lg:grid-cols-3">
+          <div className="mt-6 border-t border-border pt-6">
             {displayCaseStudyData()}
           </div>
           <div className="mt-8 border-t border-border pt-6">
