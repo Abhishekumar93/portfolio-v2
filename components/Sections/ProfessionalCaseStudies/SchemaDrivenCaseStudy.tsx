@@ -2,34 +2,31 @@ import ProfessionalCaseStudyCard from './ProfessionalCaseStudyCard';
 
 const caseStudyData = [
   {
-    title: 'The Problem',
-    description:
-      'Forms across multiple modules duplicated business logic, slowing development and making maintenance difficult.Forms across multiple modules duplicated business logic, slowing development and making maintenance difficult.',
-  },
-  {
     title: 'My Contribution',
     description:
-      'Built schema-driven forms and reusable React/TypeScript components for shared form behavior.',
+      'Built a schema-driven form system using React and TypeScript, extracting shared behavior for field changes, existing-data population, conditional expressions, tab visibility, and action-button states into reusable components.',
   },
   {
     title: 'Trade-offs',
     description:
-      'Centralized common logic while keeping APIs, success handlers, and specialized fields configurable.',
+      'Centralized common form behavior while keeping module-specific API endpoints, success handlers, and specialized fields configurable.',
   },
 ];
+const detailHeadingClassName =
+  'text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent';
+
+const detailParagraphClassName =
+  'mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary';
+
 const SchemaDrivenCaseStudy = () => {
   const displayCaseStudyData = () => {
     return caseStudyData.map((item, titleIndex) => (
       <div
         key={item.title.toLowerCase().replaceAll(/\s+/g, '-')}
-        className={titleIndex > 0 ? 'pt-8' : ''}
+        className={titleIndex > 0 ? 'border-t border-border pt-6' : undefined}
       >
-        <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
-          {item.title}
-        </h4>
-        <p className="mt-2 lg:mt-4 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-relaxed text-text-secondary">
-          {item.description}
-        </p>
+        <h4 className={detailHeadingClassName}>{item.title}</h4>
+        <p className={detailParagraphClassName}>{item.description}</p>
       </div>
     ));
   };
@@ -45,22 +42,6 @@ const SchemaDrivenCaseStudy = () => {
           <p className="mt-4 text-[clamp(0.875rem,4vw,1rem)] leading-normal text-foreground">
             less feature-development time
           </p>
-          <p className="mt-4 md:mt-6 lg:mt-8 border-t border-border pt-6 text-[clamp(1rem,4vw,1.15rem)] font-semibold leading-normal text-foreground">
-            Schema-driven form architecture
-          </p>
-          <ul
-            aria-label="Technologies"
-            className="mt-4 md:mt-6 lg:mt-8 flex flex-wrap gap-2"
-          >
-            {['React', 'TypeScript', 'Reusable UI'].map((technology) => (
-              <li
-                key={technology}
-                className="rounded-full border border-border bg-surface px-4 py-2 text-[clamp(0.625rem,3.5vw,0.75rem)] font-semibold leading-normal text-accent"
-              >
-                {technology}
-              </li>
-            ))}
-          </ul>
         </>
       }
       featuredHeading="Schema-driven form architecture for complex product workflows."
@@ -76,16 +57,32 @@ const SchemaDrivenCaseStudy = () => {
             Senior Software Engineer · Kellton · 2022–2024
           </p>
           <div className="mt-6 border-t border-border pt-6">
-            {displayCaseStudyData()}
+            <h4 className={detailHeadingClassName}>The Problem</h4>
+            <p className={detailParagraphClassName}>
+              Forms across multiple modules duplicated business logic, slowing
+              development and making maintenance difficult.
+            </p>
           </div>
-          <div className="mt-8 border-t border-border pt-6">
-            <h4 className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
-              Outcome
-            </h4>
-            <ul className="mt-4 list-disc space-y-3 pl-6 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] leading-normal text-foreground marker:text-accent md:text-lg">
-              <li>90% less feature-development time</li>
-              <li>Faster delivery of new form features</li>
-              <li>Reusable architecture across form workflows</li>
+        </>
+      }
+      fullWidthContent={
+        <>
+          {displayCaseStudyData()}
+          <div className="border-t border-border pt-6">
+            <h4 className={detailHeadingClassName}>Outcome</h4>
+            <ul className="mt-4 list-disc space-y-3 pl-6 text-[clamp(0.75rem,3.25vw,1rem)] md:text-[clamp(0.75rem,1.35vw,1rem)] font-medium leading-relaxed text-foreground marker:text-accent">
+              <li>
+                Reduced development time for similar form-based features by
+                approximately 90%.
+              </li>
+              <li>
+                Reduced repeated form logic across multiple modules through
+                reusable components.
+              </li>
+              <li>
+                Improved maintainability by centralizing shared behavior and
+                simplifying future changes.
+              </li>
             </ul>
           </div>
         </>

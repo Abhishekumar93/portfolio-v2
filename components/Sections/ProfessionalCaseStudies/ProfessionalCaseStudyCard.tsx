@@ -6,6 +6,7 @@ interface ProfessionalCaseStudyCardProps {
   featuredHeading: string;
   detailsContent: ReactNode;
   detailsHeading: string;
+  fullWidthContent?: ReactNode;
 }
 
 const ProfessionalCaseStudyCard = ({
@@ -14,6 +15,7 @@ const ProfessionalCaseStudyCard = ({
   featuredHeading,
   detailsContent,
   detailsHeading,
+  fullWidthContent,
 }: ProfessionalCaseStudyCardProps) => {
   return (
     <article className="grid grid-cols-12 gap-y-6 rounded-3xl border border-border bg-surface p-2 md:p-4 md:gap-x-6 lg:gap-8">
@@ -21,10 +23,7 @@ const ProfessionalCaseStudyCard = ({
         <p className="text-[clamp(0.75rem,2.5vw,1.25rem)] md:text-[clamp(0.75rem,1.75vw,0.875rem)] font-bold uppercase tracking-wider text-accent">
           {featuredTitle}
         </p>
-        <h3
-          id="sony-liv-case-study-heading"
-          className="mt-4 wrap-break-word text-[clamp(1.25rem,4.15vw,1.5rem)] font-bold leading-tight tracking-tight text-foreground md:text-[26px] lg:text-[30px]"
-        >
+        <h3 className="mt-4 wrap-break-word text-[clamp(1.25rem,4.15vw,1.5rem)] font-bold leading-tight tracking-tight text-foreground md:text-[26px] lg:text-[30px]">
           Sony LIV Bolt
         </h3>
         <p className="mt-4 text-[clamp(1rem,3.75vw,1.15rem)] md:text-[clamp(0.875rem,1.5vw,1rem)] leading-relaxed text-text-secondary">
@@ -44,6 +43,12 @@ const ProfessionalCaseStudyCard = ({
         </div>
         {detailsContent}
       </div>
+
+      {fullWidthContent && (
+        <div className="col-span-12 space-y-6 border-t border-border pt-6">
+          {fullWidthContent}
+        </div>
+      )}
     </article>
   );
 };
